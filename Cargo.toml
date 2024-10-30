@@ -1,7 +1,7 @@
 [package]
 build = 'common/build/build.rs'
 edition = '2021'
-name = 'ever_vm'
+name = 'ton_dev_vm'
 version = '2.2.21'
 
 [dependencies]
@@ -24,7 +24,7 @@ log4rs = '1.2'
 pprof = { features = [ 'criterion', 'flamegraph' ], version = '0.11' }
 pretty_assertions = '1.3'
 rand = '0.8'
-ever_assembler = { git = 'https://github.com/ton-dev-dao/ton-dev-assembler.git' }
+ton_dev_assembler = { git = 'https://github.com/ton-dev-dao/ton-dev-assembler.git' }
 
 [features]
 fift_check = [  ]
