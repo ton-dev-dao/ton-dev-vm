@@ -14,9 +14,9 @@
 use criterion::{criterion_group, criterion_main, Criterion, SamplingMode};
 use pprof::criterion::{PProfProfiler, Output};
 use ton_dev_block::{StateInit, Deserializable, GlobalCapabilities};
-use ever_assembler::compile_code_to_cell;
+use ton_dev_assembler::compile_code_to_cell;
 use ton_dev_block::SliceData;
-use ever_vm::{
+use ton_dev_vm::{
     executor::{Engine, gas::gas_state::Gas},
     stack::{savelist::SaveList, Stack, StackItem, continuation::ContinuationData, integer::IntegerData}
 };
@@ -460,7 +460,7 @@ fn bench_chksignu(c: &mut Criterion) {
             vec!());
         let res = engine.execute();
         assert_eq!(
-            ever_vm::error::tvm_exception_code(&res.unwrap_err()).unwrap(),
+            ton_dev_vm::error::tvm_exception_code(&res.unwrap_err()).unwrap(),
             ton_dev_block::ExceptionCode::OutOfGas
         );
     }));
