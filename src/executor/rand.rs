@@ -24,7 +24,7 @@ use crate::{
     },
     types::Status
 };
-use ever_block::{Sha256, sha512_digest};
+use ton_dev_block::{Sha256, sha512_digest};
 
 // (x - )
 pub(crate) fn execute_addrand(engine: &mut Engine) -> Status {

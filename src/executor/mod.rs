@@ -40,7 +40,7 @@ mod bls;
 mod diff;
 
 pub use engine::*;
-use ever_block::{BuilderData, Cell, IBitstring, Result};
+use ton_dev_block::{BuilderData, Cell, IBitstring, Result};
 
 #[cfg(test)]
 #[path = "../tests/test_executor.rs"]

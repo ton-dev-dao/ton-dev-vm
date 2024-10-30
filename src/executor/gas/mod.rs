@@ -16,8 +16,8 @@ use crate::{
     stack::{StackItem, integer::{IntegerData, conversion::FromInt, behavior::Quiet, math::Round}},
     types::Status
 };
-use ever_block::GlobalCapabilities;
-use ever_block::{ExceptionCode, Result};
+use ton_dev_block::GlobalCapabilities;
+use ton_dev_block::{ExceptionCode, Result};
 
 pub mod gas_state;
 

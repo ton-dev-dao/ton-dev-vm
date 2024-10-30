@@ -15,8 +15,8 @@ use crate::stack::{
     StackItem,
     integer::IntegerData,
 };
-use ever_block::{GlobalCapabilities, CurrencyCollection};
-use ever_block::{Cell, HashmapE, HashmapType, SliceData, types::UInt256, Sha256};
+use ton_dev_block::{GlobalCapabilities, CurrencyCollection};
+use ton_dev_block::{Cell, HashmapE, HashmapType, SliceData, types::UInt256, Sha256};
 
 /*
 The smart-contract information

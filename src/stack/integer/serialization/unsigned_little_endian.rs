@@ -21,7 +21,7 @@ use crate::stack::{
     },
     serialization::{Deserializer, Serializer},
 };
-use ever_block::{BuilderData, ExceptionCode, Result};
+use ton_dev_block::{BuilderData, ExceptionCode, Result};
 
 pub struct UnsignedIntegerLittleEndianEncoding {
     length_in_bits: usize

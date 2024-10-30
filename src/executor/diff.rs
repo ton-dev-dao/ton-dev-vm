@@ -22,8 +22,8 @@ use crate::{
 };
 use std::io::{Cursor, Read};
 use std::time::{Duration, Instant};
-use ever_block::GlobalCapabilities;
-use ever_block::{error, ExceptionCode, Result, SliceData};
+use ton_dev_block::GlobalCapabilities;
+use ton_dev_block::{error, ExceptionCode, Result, SliceData};
 use crate::error::tvm_exception_code;
 use crate::executor::Mask;
 

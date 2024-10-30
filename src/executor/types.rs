@@ -16,7 +16,7 @@ use crate::{
     stack::{StackItem, integer::IntegerData}
 };
 use std::{fmt, ops::Range};
-use ever_block::{error, Result, SliceData};
+use ton_dev_block::{error, Result, SliceData};
 
 macro_rules! param {
     ($self:ident, $id:ident) => {{

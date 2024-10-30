@@ -12,7 +12,7 @@
 */
 
 use crate::stack::integer::IntegerData;
-use ever_block::types::ExceptionCode;
+use ton_dev_block::types::ExceptionCode;
 
 #[test]
 fn test_into() {

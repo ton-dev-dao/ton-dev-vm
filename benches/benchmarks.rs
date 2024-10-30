@@ -13,9 +13,9 @@
 
 use criterion::{criterion_group, criterion_main, Criterion, SamplingMode};
 use pprof::criterion::{PProfProfiler, Output};
-use ever_block::{StateInit, Deserializable, GlobalCapabilities};
+use ton_dev_block::{StateInit, Deserializable, GlobalCapabilities};
 use ever_assembler::compile_code_to_cell;
-use ever_block::SliceData;
+use ton_dev_block::SliceData;
 use ever_vm::{
     executor::{Engine, gas::gas_state::Gas},
     stack::{savelist::SaveList, Stack, StackItem, continuation::ContinuationData, integer::IntegerData}
@@ -31,9 +31,9 @@ fn read_boc(filename: &str) -> Vec<u8> {
     bytes
 }
 
-fn load_boc(filename: &str) -> ever_block::Cell {
+fn load_boc(filename: &str) -> ton_dev_block::Cell {
     let bytes = read_boc(filename);
-    ever_block::read_single_root_boc(bytes).unwrap()
+    ton_dev_block::read_single_root_boc(bytes).unwrap()
 }
 
 fn load_stateinit(filename: &str) -> StateInit {
@@ -183,7 +183,7 @@ fn bench_num_bigint(c: &mut Criterion) {
 fn bench_load_boc(c: &mut Criterion) {
     let bytes = read_boc("benches/elector-data.boc");
     c.bench_function("load-boc", |b| b.iter( || {
-        ever_block::read_single_root_boc(bytes.clone()).unwrap()
+        ton_dev_block::read_single_root_boc(bytes.clone()).unwrap()
     }));
 }
 
@@ -354,14 +354,14 @@ fn bench_ed25519_verify(c: &mut Criterion) {
     for size in [1, 2, 4, 8, 16, 32, 48, 64, 96, 128] {
         let mut data = data.clone();
         data.truncate(size);
-        let signature = ever_block::ed25519_sign_with_secret(&secret, &data).unwrap();
+        let signature = ton_dev_block::ed25519_sign_with_secret(&secret, &data).unwrap();
         signed.push((data, signature));
     }
 
     let mut g = c.benchmark_group("ed25519_verify");
     for input in &signed {
         g.bench_with_input(format!("{}", input.0.len()), input, |b, input| {
-            b.iter(|| ever_block::ed25519_verify(&public, &input.0, &input.1).unwrap())
+            b.iter(|| ton_dev_block::ed25519_verify(&public, &input.0, &input.1).unwrap())
         });
     }
     g.finish();
@@ -433,7 +433,7 @@ fn bench_chksignu(c: &mut Criterion) {
 
     c.bench_function("chksignu/empty", |b| b.iter(|| {
         let mut engine = Engine::with_capabilities(DEFAULT_CAPABILITIES).setup_with_libraries(
-            SliceData::load_cell(ever_block::Cell::default()).unwrap(),
+            SliceData::load_cell(ton_dev_block::Cell::default()).unwrap(),
             None,
             Some(stack.clone()),
             None,
@@ -461,7 +461,7 @@ fn bench_chksignu(c: &mut Criterion) {
         let res = engine.execute();
         assert_eq!(
             ever_vm::error::tvm_exception_code(&res.unwrap_err()).unwrap(),
-            ever_block::ExceptionCode::OutOfGas
+            ton_dev_block::ExceptionCode::OutOfGas
         );
     }));
 }

@@ -27,8 +27,8 @@ use crate::{
     types::Status
 };
 use std::cmp;
-use ever_block::{fail, ExceptionCode};
-use ever_block::GlobalCapabilities;
+use ton_dev_block::{fail, ExceptionCode};
+use ton_dev_block::GlobalCapabilities;
 
 // Stack manipulation *********************************************************
 

@@ -19,7 +19,7 @@ use self::{savelist::SaveList, continuation::ContinuationData, integer::IntegerD
 use std::{fmt, mem, ops::Range, slice::Iter, sync::Arc, cmp::Ordering};
 use integer::serialization::{Encoding, SignedIntegerBigEndianEncoding};
 use serialization::Deserializer;
-use ever_block::{
+use ton_dev_block::{
     MAX_DATA_BITS, MAX_REFERENCES_COUNT,
     BuilderData, Cell, CellType, ExceptionCode, HashmapType, IBitstring,
     Result, SliceData, GasConsumer, HashmapE

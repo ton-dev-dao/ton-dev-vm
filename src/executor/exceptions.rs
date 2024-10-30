@@ -21,8 +21,8 @@ use crate::{
     types::{Exception, Status}
 };
 use std::ops::Range;
-use ever_block::GlobalCapabilities;
-use ever_block::{fail, ExceptionCode};
+use ton_dev_block::GlobalCapabilities;
+use ton_dev_block::{fail, ExceptionCode};
 
 //Utilities **********************************************************************************
 //(c c' -)

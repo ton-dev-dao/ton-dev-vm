@@ -30,11 +30,11 @@ use crate::{
 };
 use std::{sync::{Arc, Mutex}, ops::Range};
 use std::collections::{HashMap, HashSet};
-use ever_block::{
+use ton_dev_block::{
     error, BuilderData, Cell, CellType, Error, ExceptionCode, GasConsumer, HashmapE, IBitstring,
     Result, SliceData, UInt256
 };
-use ever_block::{ShardAccount, Deserializable, GlobalCapabilities};
+use ton_dev_block::{ShardAccount, Deserializable, GlobalCapabilities};
 
 pub(super) type ExecuteHandler = fn(&mut Engine) -> Status;
 

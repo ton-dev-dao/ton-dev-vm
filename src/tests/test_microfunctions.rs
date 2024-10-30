@@ -15,8 +15,8 @@ use crate::{
     executor::{Engine, engine::storage::swap, microcode::{CTRL, SAVELIST, VAR}},
     stack::{StackItem, continuation::ContinuationData}
 };
-use ever_block::{Cell, SliceData, types::ExceptionCode};
-use ever_block::GlobalCapabilities;
+use ton_dev_block::{Cell, SliceData, types::ExceptionCode};
+use ton_dev_block::GlobalCapabilities;
 
 #[test]
 fn test_swap_with_any() {

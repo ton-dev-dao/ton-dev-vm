@@ -22,7 +22,7 @@ use crate::{
    },
    stack::{Stack, StackItem, integer::IntegerData}
 };
-use ever_block::{BuilderData, SliceData};
+use ton_dev_block::{BuilderData, SliceData};
 
 #[test]
 fn test_dump_var() {

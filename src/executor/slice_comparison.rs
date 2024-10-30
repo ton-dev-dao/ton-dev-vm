@@ -15,7 +15,7 @@ use crate::{
     executor::{engine::{Engine, storage::fetch_stack}, types::Instruction},
     stack::{StackItem, integer::IntegerData}, types::Status,
 };
-use ever_block::SliceData;
+use ton_dev_block::SliceData;
 
 fn unary<F>(engine: &mut Engine, name: &'static str, operation: F) -> Status
 where

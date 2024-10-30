@@ -30,8 +30,8 @@ use crate::{
     },
     types::Status
 };
-use ever_block::GlobalCapabilities;
-use ever_block::{BuilderData, CellType, GasConsumer, IBitstring, Result, ExceptionCode, MAX_LEVEL};
+use ton_dev_block::GlobalCapabilities;
+use ton_dev_block::{BuilderData, CellType, GasConsumer, IBitstring, Result, ExceptionCode, MAX_LEVEL};
 
 const QUIET: u8 = 0x01; // quiet variant
 const STACK: u8 = 0x02; // length of int in stack
@@ -690,7 +690,7 @@ pub fn execute_cdepth(engine: &mut Engine) -> Status {
         0
     } else {
         let c = engine.cmd.var(0).as_cell()?;
-        if !engine.check_capabilities(ever_block::GlobalCapabilities::CapResolveMerkleCell as u64) && c.references_count() == 0 {
+        if !engine.check_capabilities(ton_dev_block::GlobalCapabilities::CapResolveMerkleCell as u64) && c.references_count() == 0 {
             0
         } else {
             c.depth(MAX_LEVEL)
@@ -721,7 +721,7 @@ pub fn execute_stcont(engine: &mut Engine) -> Status {
     engine.cmd.var(0).as_builder()?;
     engine.cmd.var(1).as_continuation()?;
     let cont = engine.cmd.var_mut(1).withdraw();
-    let cont = if engine.check_capabilities(ever_block::GlobalCapabilities::CapStcontNewFormat as u64) {
+    let cont = if engine.check_capabilities(ton_dev_block::GlobalCapabilities::CapStcontNewFormat as u64) {
         cont.as_continuation()?.serialize(engine)?
     } else {
         let (cont, gas) = cont.as_continuation()?.serialize_old()?;

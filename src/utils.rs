@@ -11,7 +11,7 @@
 * limitations under the License.
 */
 
-use ever_block::{
+use ton_dev_block::{
     fail, 
     BuilderData, Cell, ExceptionCode, GasConsumer, MAX_DATA_BITS, Result, SliceData
 };

@@ -23,7 +23,7 @@ use crate::{
     types::Status
 };
 use std::collections::HashSet;
-use ever_block::{BuilderData, IBitstring, SliceData};
+use ton_dev_block::{BuilderData, IBitstring, SliceData};
 
 #[test]
 fn test_assert_stack() {

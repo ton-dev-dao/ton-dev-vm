@@ -15,7 +15,7 @@ use crate::{
     executor::{Mask, engine::Engine, types::{Instruction, InstructionOptions}},
     stack::StackItem, types::Status
 };
-use ever_block::ExceptionCode;
+use ton_dev_block::ExceptionCode;
 use std::{cmp, str, sync::Arc};
 
 const STR:   u8 = 0x01;

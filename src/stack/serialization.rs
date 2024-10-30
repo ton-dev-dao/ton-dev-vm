@@ -12,7 +12,7 @@
 */
 
 use crate::stack::BuilderData;
-use ever_block::Result;
+use ton_dev_block::Result;
 
 pub trait Deserializer<T> {
     /// Tries to deserialize a value from a bitstring

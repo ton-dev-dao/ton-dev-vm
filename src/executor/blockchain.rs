@@ -27,11 +27,11 @@ use crate::{
     types::Status,
 };
 use num::{bigint::Sign, BigInt};
-use ever_block::{
+use ton_dev_block::{
     Deserializable, GlobalCapabilities, MsgAddressInt, ACTION_CHANGE_LIB, ACTION_COPYLEFT,
     ACTION_RESERVE, ACTION_SEND_MSG, ACTION_SET_CODE,
 };
-use ever_block::{
+use ton_dev_block::{
     types::ExceptionCode, BuilderData, Cell, GasConsumer, IBitstring, Result, SliceData,
 };
 

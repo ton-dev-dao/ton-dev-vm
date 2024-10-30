@@ -24,7 +24,7 @@ use crate::{
         BuilderData,
     },
 };
-use ever_block::{ExceptionCode, Result};
+use ton_dev_block::{ExceptionCode, Result};
 
 pub struct UnsignedIntegerBigEndianEncoding {
     length_in_bits: usize

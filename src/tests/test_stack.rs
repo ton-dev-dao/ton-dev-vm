@@ -11,7 +11,7 @@
 * limitations under the License.
 */
 
-use ever_block::{BuilderData, SliceData};
+use ton_dev_block::{BuilderData, SliceData};
 use super::{Stack, StackItem};
 
 #[test]

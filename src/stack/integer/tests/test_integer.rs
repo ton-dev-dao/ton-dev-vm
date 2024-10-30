@@ -85,7 +85,7 @@ mod test_bitsize {
 mod test_minus_2_pow_256 {
 
     use crate::stack::integer::{IntegerData, behavior::Signaling};
-    use ever_block::{Result, types::ExceptionCode};
+    use ton_dev_block::{Result, types::ExceptionCode};
 
     #[test]
     fn test_2_pow_256_overflows() {

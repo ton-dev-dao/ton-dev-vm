@@ -11,7 +11,7 @@
 * limitations under the License.
 */
 
-use ever_block::{Result, ExceptionCode};
+use ton_dev_block::{Result, ExceptionCode};
 
 // Gas state
 #[derive(Clone, Debug, Eq, PartialEq)]

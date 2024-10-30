@@ -27,7 +27,7 @@ use crate::{
     types::Status
 };
 use std::{cmp::Ordering, mem};
-use ever_block::{Result, Bitmask, ExceptionCode};
+use ton_dev_block::{Result, Bitmask, ExceptionCode};
 
 // Common definitions *********************************************************
 

@@ -20,7 +20,7 @@ use crate::{
     types::{ResultMut, ResultRef, Status}
 };
 use std::{mem, ops::Range};
-use ever_block::{error, fail, Result, types::ExceptionCode};
+use ton_dev_block::{error, fail, Result, types::ExceptionCode};
 use crate::executor::gas::gas_state::Gas;
 
 // Utilities ******************************************************************
@@ -43,7 +43,7 @@ macro_rules! continuation_mut_by_address {
             VAR => $engine.cmd.var_mut(storage_index!($address)).as_continuation_mut(),
             CTRL => match $engine.ctrls.get_mut(storage_index!($address)) {
                 Some(ctrl) => ctrl.as_continuation_mut(),
-                None => ever_block::fail!(ExceptionCode::TypeCheckError)
+                None => ton_dev_block::fail!(ExceptionCode::TypeCheckError)
             },
             _ => fail!("continuation_mut_by_address: {:X}", address_tag!($address))
         }
@@ -314,7 +314,7 @@ pub(in crate::executor) fn pop_all(engine: &mut Engine, dst: u16) -> Status {
     } else {
         nargs as usize
     };
-    if engine.check_capabilities(ever_block::GlobalCapabilities::CapTvmV19 as u64) {
+    if engine.check_capabilities(ton_dev_block::GlobalCapabilities::CapTvmV19 as u64) {
         pop_range(engine, 0..drop, dst)
     } else {
         // This branch is incorrect because the gas may still be consumed when drop is zero.
@@ -338,7 +338,7 @@ pub(in crate::executor) fn pop_range(engine: &mut Engine, drop: Range<usize>, ds
         engine.try_use_gas(Gas::stack_price(save))?;
     }
     // pay for stack concatenation
-    if engine.check_capabilities(ever_block::GlobalCapabilities::CapTvmV19 as u64) {
+    if engine.check_capabilities(ton_dev_block::GlobalCapabilities::CapTvmV19 as u64) {
         if dst_depth != 0 {
             engine.try_use_gas(Gas::stack_price(save + dst_depth))?;
         }

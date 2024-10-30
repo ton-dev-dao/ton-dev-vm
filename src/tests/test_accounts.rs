@@ -16,8 +16,8 @@ use crate::executor::accounts::{
 };
 use num::BigUint;
 use rand::{prelude::SliceRandom, thread_rng};
-use ever_block::Grams;
-use ever_block::UInt256;
+use ton_dev_block::Grams;
+use ton_dev_block::UInt256;
 
 impl Validator {
     fn with_stake(stake: u64) -> Validator {

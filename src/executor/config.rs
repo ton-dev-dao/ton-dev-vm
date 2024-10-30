@@ -15,7 +15,7 @@ use crate::{
     executor::{engine::{Engine, storage::fetch_stack}, types::{InstructionOptions, Instruction}},
     stack::{StackItem, integer::IntegerData}, types::Status
 };
-use ever_block::GlobalCapabilities;
+use ton_dev_block::GlobalCapabilities;
 
 fn execute_config_param(engine: &mut Engine, name: &'static str, opt: bool) -> Status {
     engine.load_instruction(Instruction::new(name))?;

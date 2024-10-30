@@ -30,8 +30,8 @@ use crate::{
     },
     types::Status
 };
-use ever_block::GlobalCapabilities;
-use ever_block::{
+use ton_dev_block::GlobalCapabilities;
+use ton_dev_block::{
     CellType, GasConsumer, Result, SliceData, ExceptionCode
 };
 use std::collections::HashSet;
@@ -976,7 +976,7 @@ pub fn execute_ldcont(engine: &mut Engine) -> Status {
     engine.load_instruction(Instruction::new("LDCONT"))?;
     fetch_stack(engine, 1)?;
     let mut slice = engine.cmd.var(0).as_slice()?.clone();
-    let cont = if engine.check_capabilities(ever_block::GlobalCapabilities::CapStcontNewFormat as u64) {
+    let cont = if engine.check_capabilities(ton_dev_block::GlobalCapabilities::CapStcontNewFormat as u64) {
         ContinuationData::deserialize(&mut slice, engine)?
     } else {
         let (cont, gas) = ContinuationData::deserialize_old(&mut slice)?;

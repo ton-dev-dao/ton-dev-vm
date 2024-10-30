@@ -22,12 +22,12 @@ use std::{
     collections::HashMap,
     sync::Arc,
 };
-use ever_block::{
+use ton_dev_block::{
     Account, ConfigParam1, ConfigParam15, ConfigParam16, ConfigParam17, ConfigParam34,
     DelectorParams, Deserializable, GlobalCapabilities, Grams, MsgAddress, MsgAddressInt,
     Serializable, ShardAccount, SigPubKey, ValidatorDescr, ValidatorSet,
 };
-use ever_block::{
+use ton_dev_block::{
     error, fail, BuilderData, Cell, ExceptionCode, GasConsumer, HashmapE, IBitstring, Result,
     SliceData, UInt256,
 };

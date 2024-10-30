@@ -15,7 +15,7 @@ use crate::{
     executor::{engine::Engine, microcode::{VAR, CELL, SLICE, BUILDER, CONTINUATION}},
     stack::{StackItem, continuation::ContinuationData}, types::Status
 };
-use ever_block::{fail, GasConsumer};
+use ton_dev_block::{fail, GasConsumer};
 
 // Utilities ******************************************************************
 

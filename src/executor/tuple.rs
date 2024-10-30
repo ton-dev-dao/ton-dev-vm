@@ -19,8 +19,8 @@ use crate::{
     stack::{StackItem, integer::IntegerData},
     types::Status
 };
-use ever_block::GlobalCapabilities;
-use ever_block::{fail, ExceptionCode};
+use ton_dev_block::GlobalCapabilities;
+use ton_dev_block::{fail, ExceptionCode};
 
 fn tuple(engine: &mut Engine, name: &'static str, how: u8) -> Status {
     let mut inst = Instruction::new(name);
